@@ -82,3 +82,29 @@ section .divisao-section{
     height: 100vh;
     background-color: white;
 }
+
+/* Estilizando o footer */
+
+footer {
+	background-color: #001a30;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+	margin-top: 50px;
+}
+
+ul {
+	list-style: none;
+	padding: 50px;
+	margin: 5px;
+}
+
+li {
+	display: inline-block;
+	margin: 0 10px;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
