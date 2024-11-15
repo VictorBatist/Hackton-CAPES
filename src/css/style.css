@@ -1,0 +1,84 @@
+/* Estilização Geral */
+
+:root{
+    --color-white: white;
+    --color-black: black;
+}
+
+/* Header */
+
+body{
+    font-family: "Poppins", sans-serif;
+    background-image: url(../assets/image/Background-Capes.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    display: flex;
+
+}
+
+header .menu{
+    
+    width: 1280px;
+    display: flex;
+    justify-content: space-between;
+    margin: 60px 30px;
+    align-items: center;
+}
+
+/* Estilizando sessão de pesquisa */
+
+section {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .input-pesquisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section button.btn-input{
+    color: #D9D9D9;
+    display: flex;
+    padding: 20px;
+    margin-top: 180px;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    border-radius: 30px;
+    width: 550px;
+    height: 60px;
+    cursor: pointer;
+}
+
+button.btn-input i{
+    font-size: 30px;
+    color: #999999;
+}
+
+button.btn-input input{
+    color: #999999;
+    background-color: rgb(235, 235, 235);
+    border: none;
+    outline: none;
+    font-size: 25px;
+}
+
+section .input-pesquisa p span{
+    color: #999999;
+}
+
+/* Estilizando a divisão da sessão */
+
+section .divisao-section{
+    z-index: -1;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
