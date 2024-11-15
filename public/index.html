@@ -7,6 +7,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
     <!-- Links Style CSS -->
      <link rel="stylesheet" href="./css/reset.css">
      <link rel="stylesheet" href="./css/style.css">
@@ -15,29 +16,42 @@
     <title>CAPES</title>
 </head>
 <body>
+    <main>
     <header>       
-            <nav class="menu">
-                <a href=""><img class="logo" src="./assets/image/logo-capes-periodicos.webp" alt="periodicos"></a>
-                <div class="menu-login">
-                    <button>Criar conta</button>
-                    <a href="/user/login"><button>Login</button></a>
-                </div> 
-            </nav>
+        <div class="rainbow"><img src="./assets/image/rainbow.png" id="rainbow"></div>
+            <div class="menu">
+                <img src="./assets/image/background.png">
+                <div class="menu-items">
+                    <a href=""><img class="logo" src="./assets/image/logo-capes-periodicos.webp" alt="periodicos"></a>
+                    <div class="menu-login">
+                        <a href="#">Criar Conta</a>
+                        <a href="/user/login">Login</a>
+                    </div> 
+                </div>
+            </div>
     </header>
-    <section>
-        <div class="input-pesquisa">
-            <button class="btn-input"> <i class='bx bx-search-alt-2' ></i> <input type="text" placeholder="O que você procura?"> </button>
-            <p>Tente por: <span>Peter Jandi Junior  IFPB  Medicina</span></p>
-        </div>
-    </section>
+    <main>
+        <section>
+            <div class="input-pesquisa">
+                <button class="btn-input"> <img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?"> </button>
+                <p class="sugestions">Tente por: <span>Peter Jandi Junior</hspan><span>IFPB</span><span>Medicina</span></p>
+            </div>
+        </section>
 
-    <section>
-        <div class="divisao-section"></div>
 
-    </section>
+        <section id="cadastro">
+            <div class="section-cadastro" >
+                <h1>CRIE SUA CONTA E TENHA UM <br> AMBIENTE PERSONALIZADO</h1>
+                <P>Mais fácil de procurar o que você deseja!</P>
+            </div>
+            <div class="formulario">
+                <h3>Data de Nascimento</h3>
+            </div>
+        </section>
+    </main>
 
-    <footer>
-        <img src="/assets/image/Logo-Capes.webp" alt="">
+    <div class="footer">
+        <img src="./assets/image/Logo-Capes.webp" alt="Capes">
         <p>Capes © Todos os direitos reservados.</p>
         <nav>
             <ul>
@@ -47,6 +61,7 @@
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
-    </footer>
+    </div>
+    </main>
 </body>
 </html>

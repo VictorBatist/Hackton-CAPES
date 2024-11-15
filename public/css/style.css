@@ -1,37 +1,74 @@
 /* Estilização Geral */
 
 :root{
-    --color-white: white;
-    --color-black: black;
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-gray-white:#D9D9D9;
+    --color-gray:#999999;
 }
 
 /* Header */
 
-body{
-    font-family: "Poppins", sans-serif;
-    background-image: url(../assets/image/Background-Capes.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+main{
+    width: 100%;
+    height: 100%;
 }
 
 header{
-    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 470px;
+    background: #EFDDD3;
+    justify-content: center;
+    
+}
 
+.rainbow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/image/rainbow.png) repeat-x;
 }
 
 header .menu{
-    
-    width: 1280px;
     display: flex;
-    justify-content: space-between;
-    margin: 60px 30px;
-    align-items: center;
+    justify-content: center;
+    bottom: 0px;
+}
+
+header .menu img{
+    position: absolute;
+    bottom: 0;
+} 
+
+header .menu .logo{
+    position: relative;
+}
+
+header .menu .menu-login{
+    color: #000000;
+}
+.menu-login a{
+    font-family: 'Montserrat';
+    font-size: 14.47px;
+    font-weight: 600;
+    color: rgb(43, 42, 42);
+    margin: 15px;
 }
 
 /* Estilizando sessão de pesquisa */
 
 section {
-    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,53 +81,107 @@ section .input-pesquisa{
 }
 
 section button.btn-input{
-    color: #D9D9D9;
+    background-color: var(--color-gray-white);
     display: flex;
     padding: 20px;
-    margin-top: 180px;
+    margin-top: -41px;
     align-items: center;
     gap: 20px;
     border: none;
-    border-radius: 30px;
-    width: 550px;
-    height: 60px;
-    cursor: pointer;
+    border-radius: 57px;
+    width: 705px;
+    height: 82px;
+    z-index: 1;
+}
+.btn-input img{
+    scale: 1.1;
+    margin-left: 15px;
 }
 
-button.btn-input i{
-    font-size: 30px;
-    color: #999999;
+.menu-items{
+    margin-top: 20px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button.btn-input input{
+    font-family: 'Montserrat';
     color: #999999;
-    background-color: rgb(235, 235, 235);
     border: none;
+    background: none;
+    margin-top: 5px;
     outline: none;
     font-size: 25px;
+    font-weight: 700;
 }
 
-section .input-pesquisa p span{
+input::placeholder {
+    padding-top: 20px;
     color: #999999;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+section .input-pesquisa p span{
+    color: var(--color-black);
 }
 
 /* Estilizando a divisão da sessão */
 
-section .divisao-section{
-    z-index: -1;
+ .divisao-section{
     width: 100%;
-    height: 100vh;
-    background-color: white;
+    height: 100px;
+    background-color: var(--color-white);
+    margin-bottom: 30px;
+}
+
+/* Estilizando a sessão cadastro */
+
+section .section-cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    background-color: #1E2142;
+    width: 100%;
+    height: 369px;
+}
+.sugestions{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    width: 600px;
+    margin-top: 10px;
+    color: var(--color-gray);
+}
+.sugestions span{
+    margin-left: 20px;
+}
+#cadastro{
+    margin-top: 60px;
+}
+
+section .formulario{
+    background-color: #333CA2;
+    width: 541px;
+    height:369px;
+    padding: 20px 0px;
 }
 
 /* Estilizando o footer */
 
-footer {
+.footer {
 	background-color: #001a30;
 	color: #fff;
 	padding: 20px;
 	text-align: center;
-	margin-top: 50px;
+    bottom: 0;
 }
 
 ul {
