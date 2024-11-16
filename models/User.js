@@ -6,11 +6,6 @@ const UsuarioSchema = new Schema({
     type: String,
     required: true
   },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
   senha: {
     type: String,
     required: true
@@ -19,6 +14,10 @@ const UsuarioSchema = new Schema({
     type: String,
     required: true,
     unique: true 
+  },
+  dataNasc: {
+    type: String,
+    required: true
   }
 });
 
