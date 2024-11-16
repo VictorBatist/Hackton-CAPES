@@ -23,6 +23,18 @@ main{
     width: 100%;
     height: 100%;
 }
+/*
+Usado para alinhar a página
+.alinhamento{
+    background: none;
+    width: 63%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
 
 header{
     position: relative;
@@ -81,6 +93,7 @@ section .input-pesquisa{
 }
 
 section button.btn-input{
+    cursor: pointer;
     background-color: var(--color-gray-white);
     display: flex;
     padding: 20px;
@@ -115,17 +128,25 @@ button.btn-input input{
     outline: none;
     font-size: 25px;
     font-weight: 700;
+    width: 100%;
+    height: 100%;
+}
+
+input:focus {
+    outline: none;
+    border: none;
 }
 
 input::placeholder {
     padding-top: 20px;
     color: #999999;
-    font-size: 25px;
+    font-size: 21px;
     font-weight: 700;
 }
 
 
 section .input-pesquisa p span{
+    cursor: pointer;
     color: var(--color-black);
 }
 
@@ -142,13 +163,27 @@ section .input-pesquisa p span{
 
 section .section-cadastro{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     color: var(--color-white);
-    background-color: #1E2142;
-    width: 100%;
-    height: 369px;
+    width: 1190px;
+    height: 100%;
+}
+
+#title{
+    font-weight: bold;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 800;
+}
+#subtitle{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content-text{
+    margin-top: -140px;
 }
 .sugestions{
     display: flex;
@@ -164,14 +199,105 @@ section .section-cadastro{
     margin-left: 20px;
 }
 #cadastro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+    background-color: #1E2142;
+    width: 100%;
+    height: 369px;
     margin-top: 60px;
 }
 
 section .formulario{
     background-color: #333CA2;
     width: 541px;
-    height:369px;
-    padding: 20px 0px;
+    height:490px;
+    padding: 20px 20px;
+    margin-top: 120px;
+    border-radius: 0 0 50px 50px;
+}
+
+.formulario #title{
+    font-size: 20px;
+}
+.formulario .reg-form{
+    margin: 50px 20px;
+}
+
+.formulario #confirm{
+    margin-top: 20px;
+    background-color: #1E2142;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 16px;
+    width: 35%;
+    height: 47px;
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 900;
+}
+
+.data-inputs{
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    height: 43px;
+}
+.data-inputs input{
+    margin-right: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    width: 98px;
+    height: 43px;
+    font-size: 20px;
+    text-align: center;
+    color: #333CA2;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+.data-inputs input::placeholder{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #333CA2;
+}
+.form-inputs{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 219px;
+}
+.form-inputs input{
+    margin-top: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 16px;
+    width: 95%;
+    height: 63px;
+    font-size: 20px;
+    color: #333CA2;
+    font-weight: 900;
+}
+.form-inputs input::placeholder{
+    font-weight: 700;
+    font-size: 20px;
+    color: #333CA2;
 }
 
 /* Estilizando o footer */

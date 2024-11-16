@@ -8,6 +8,7 @@
     <!-- Link Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Lalezar&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Links Style CSS -->
      <link rel="stylesheet" href="./css/reset.css">
      <link rel="stylesheet" href="./css/style.css">
@@ -33,19 +34,34 @@
     <main>
         <section>
             <div class="input-pesquisa">
-                <button class="btn-input"> <img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?"> </button>
+                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?"> </button>
                 <p class="sugestions">Tente por: <span>Peter Jandi Junior</hspan><span>IFPB</span><span>Medicina</span></p>
             </div>
         </section>
 
 
         <section id="cadastro">
-            <div class="section-cadastro" >
-                <h1>CRIE SUA CONTA E TENHA UM <br> AMBIENTE PERSONALIZADO</h1>
-                <P>Mais fácil de procurar o que você deseja!</P>
-            </div>
-            <div class="formulario">
-                <h3>Data de Nascimento</h3>
+            <div class="section-cadastro">
+                <div class="content-text">
+                    <h1 id="title">CRIE SUA CONTA E TENHA UM <br> AMBIENTE PERSONALIZADO</h1>
+                    <P id="subtitle">Mais fácil de procurar o que você deseja!</P>
+                </div>
+                <div class="formulario">
+                    <div class="reg-form">
+                        <h3 id="title">Data de Nascimento</h3>
+                        <div class="data-inputs">
+                            <input type="number" placeholder="dd">
+                            <input type="number" placeholder="mm">
+                            <input type="number" placeholder="aa">
+                        </div>
+                        <div class='form-inputs'>
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="E-mail">
+                        <input type="text" placeholder="Senha">
+                        </div>
+                        <button type="submit" id="confirm">Criar Conta</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -63,5 +79,6 @@
         </nav>
     </div>
     </main>
+    <div class="alinhamento"></div>
 </body>
 </html>
