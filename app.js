@@ -6,9 +6,11 @@ const passport = require('passport');
 const bcrypt = require('bcryptjs');
 const db = require('./config/db');
 require('./config/passport')(passport);
+const user = require('./routes/user')
 
 const PORT = process.env.PORT || 8081;
 
+app.use('/user', user)
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

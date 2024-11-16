@@ -9,40 +9,82 @@
 
 /* Header */
 
-body{
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    background-image: url(../assets/image/Background-Capes.webp);
-    background-size: cover;
-    background-attachment: fixed;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+/*
+Usado para alinhar a página
+.alinhamento{
+    background: none;
+    width: 63%;
+    height: 100%;
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
 
 header{
-    display: flex;
+    position: relative;
+    width: 100vw;
+    height: 470px;
+    background: #EFDDD3;
+    justify-content: center;
+    
 }
 
-header .menu .logo{
-    width: 263px;
+.rainbow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../assets/image/rainbow.png) repeat-x;
 }
 
 header .menu{
-    width: 1280px;
     display: flex;
-    justify-content: space-between;
-    margin: 60px 30px;
-    align-items: center;
+    justify-content: center;
+    bottom: 0px;
 }
 
-header .menu .menu-login a{
-    text-decoration: none;
-    margin: 10px;
-    color: var(--color-black);
+header .menu img{
+    position: absolute;
+    bottom: 0;
+} 
+
+header .menu .logo{
+    position: relative;
+}
+
+header .menu .menu-login{
+    color: #000000;
+}
+.menu-login a{
+    font-family: 'Montserrat';
+    font-size: 14.47px;
+    font-weight: 600;
+    color: rgb(43, 42, 42);
+    margin: 15px;
 }
 
 /* Estilizando sessão de pesquisa */
 
 section {
-    height: 300px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,34 +97,61 @@ section .input-pesquisa{
 }
 
 section button.btn-input{
+    cursor: pointer;
     background-color: var(--color-gray-white);
     display: flex;
     padding: 20px;
-    margin-top: 310px;
+    margin-top: -41px;
     align-items: center;
     gap: 20px;
     border: none;
-    border-radius: 30px;
-    width: 550px;
-    height: 60px;
-    cursor: pointer;
+    border-radius: 57px;
+    width: 705px;
+    height: 82px;
+    z-index: 1;
+}
+.btn-input img{
+    scale: 1.1;
+    margin-left: 15px;
 }
 
-button.btn-input i{
-    font-size: 30px;
-    color: var(--color-gray);
+.menu-items{
+    margin-top: 20px;
+    width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 button.btn-input input{
-    color: var(--color-gray);
-    background-color: var(--color-gray-white);
+    font-family: 'Montserrat';
+    color: #999999;
     border: none;
+    background: none;
+    margin-top: 5px;
     outline: none;
     font-size: 25px;
+    font-weight: 700;
+    width: 100%;
+    height: 100%;
 }
 
+input:focus {
+    outline: none;
+    border: none;
+}
+
+input::placeholder {
+    padding-top: 20px;
+    color: #999999;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
 section .input-pesquisa p span{
-    color: var(--color-gray);
+    cursor: pointer;
+    color: var(--color-black);
 }
 
 /* Estilizando a divisão da sessão */
@@ -98,6 +167,43 @@ section .input-pesquisa p span{
 
 section .section-cadastro{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--color-white);
+    width: 1190px;
+    height: 100%;
+}
+
+#title{
+    font-weight: bold;
+    font-size: 38px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing:auto;
+    font-weight: 800;
+}
+#subtitle{
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.content-text{
+    margin-top: -140px;
+}
+.sugestions{
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Montserrat';
+    font-size: 15px;
+    width: 600px;
+    margin-top: 10px;
+    color: var(--color-gray);
+}
+.sugestions span{
+    margin-left: 20px;
+}
+#cadastro{
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -105,23 +211,120 @@ section .section-cadastro{
     background-color: #1E2142;
     width: 100%;
     height: 369px;
+    margin-top: 60px;
 }
 
 section .formulario{
     background-color: #333CA2;
     width: 541px;
-    height:369px;
-    padding: 20px 0px;
+    height:490px;
+    padding: 20px 20px;
+    margin-top: 120px;
+    border-radius: 0 0 50px 50px;
+}
+
+.formulario #title{
+    font-size: 20px;
+}
+.formulario .reg-form{
+    margin: 50px 20px;
+}
+
+.formulario #confirm{
+    margin-top: 20px;
+    background-color: #1E2142;
+    display: flex;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 16px;
+    width: 35%;
+    height: 47px;
+    font-size: 20px;
+    color: var(--color-white);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.data-inputs{
+    margin-top: 20px;
+    display: flex;
+    width: 80%;
+    height: 43px;
+}
+.data-inputs input{
+    margin-right: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border: none;
+    border-radius: 16px;
+    width: 98px;
+    height: 43px;
+    font-size: 20px;
+    text-align: center;
+    color: #333CA2;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.data-inputs input[type="number"] {
+    -moz-appearance: textfield; /* Remove a aparência padrão do número no Firefox */
+    appearance: textfield; 
+    text-align: center;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+img {
+    pointer-events: none;
+}
+
+.data-inputs input::placeholder{
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #333CA2;
+}
+.form-inputs{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 219px;
+}
+.form-inputs input{
+    margin-top: 20px;
+    background-color: var(--color-white);
+    display: flex;
+    padding: 10px 30px;
+    border: none;
+    border-radius: 16px;
+    width: 95%;
+    height: 63px;
+    font-size: 20px;
+    color: #333CA2;
+    font-weight: 700;
+}
+.form-inputs input::placeholder{
+    font-weight: 700;
+    font-size: 20px;
+    color: #333CA2;
 }
 
 /* Estilizando o footer */
 
-footer {
+.footer {
 	background-color: #001a30;
 	color: #fff;
 	padding: 20px;
 	text-align: center;
-	margin-top: 50px;
+    bottom: 0;
 }
 
 ul {
@@ -138,4 +341,91 @@ li {
 a {
 	color: #fff;
 	text-decoration: none;
+}
+
+.suggestions-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-gray-white);
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .suggestions-list li {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--color-gray);
+  }
+  
+  .suggestions-list li:hover {
+    border-radius: 10px;
+    background-color: #eaeaea;
+  }
+  .cont-suggestions{
+    position: relative;
+    width: 90%;
+  }
+
+#slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 430px;
+    gap: 100px;
+}
+  
+.main-content {
+    flex-grow: 1;
+}
+
+.slider-content{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 310.95px;
+}
+
+.slider-content #title{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #212121;
+    font-weight: bold;
+}
+.slider-content #subtitle{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 9.5px;
+    color: #212121;
+}
+.slider-content #data{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 6.6px;
+    color: #212121;
+}
+
+.info{
+    width: 1540px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+.info #info-title{
+    color: #1E2142;
+    display: flex;
+    width: 350px;
+    font-size: 38px;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
 }
