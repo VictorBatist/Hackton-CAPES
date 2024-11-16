@@ -30,7 +30,7 @@
                     <a href=""><img class="logo" src="./assets/image/logo-capes-periodicos.png" alt="periodicos"></a>
                     <div class="menu-login">
                         <a href="#" id="createAccount">Criar Conta</a>
-                        <a href="/user/login" id="Login">Login</a>
+                        <a href="#" id="Login">Login</a>
                     </div> 
                 </div>
             </div>
@@ -51,10 +51,10 @@
             <div class="section-cadastro">
                 <div class="content-text">
                     <h1 id="title">CRIE SUA CONTA E TENHA UM <br> AMBIENTE PERSONALIZADO</h1>
-                    <P id="subtitle">Mais fácil de procurar o que você deseja!</P>
+                    <p id="subtitle">Mais fácil de procurar o que você deseja!</p>
                 </div>
-                <div class="formulario">
-                    <div class="reg-form">
+                <div class="formulario" id="formulario">
+                    <div class="reg-form" id="cadastroForm">
                         <h3 id="title">Data de Nascimento</h3>
                         <div class="data-inputs">
                             <input type="number" placeholder="dd" max="31" oninput="this.value = this.value.slice(0, 2)">
@@ -62,11 +62,21 @@
                             <input type="number" placeholder="aa" max="2024" oninput="this.value = this.value.slice(0, 4)">
                         </div>
                         <div class='form-inputs'>
-                        <input type="text" placeholder="Nome">
-                        <input type="text" id="cpf" placeholder="CPF" maxlength="14">
-                        <input type="password" placeholder="Senha">
+                            <input type="text" placeholder="Nome">
+                            <input type="text" id="cpf" placeholder="CPF" maxlength="14">
+                            <input type="password" placeholder="Senha">
+                            <input type="password" placeholder="Confirme a senha">
                         </div>
                         <button type="submit" id="confirm">Criar Conta</button>
+                    </div>
+        
+                    <div class="reg-form" id="loginForm" style="display: none;">
+                        <h3 id="title">Login</h3>
+                        <div class="form-inputs2">
+                            <input type="text" id="cpf" placeholder="CPF" maxlength="14">
+                            <input type="password" placeholder="Senha">
+                        </div>
+                        <button type="submit" id="confirm" class="enter-btn">Entrar</button>
                     </div>
                 </div>
             </div>
