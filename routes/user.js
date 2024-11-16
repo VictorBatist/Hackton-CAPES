@@ -6,13 +6,60 @@ const Usuario = mongoose.model("usuarios");
 const bcrypt = require("bcryptjs")
 const passport = require("passport")
 
-router.post("/registro", (req,res) => {
-    // Essa rota fará o tratamento dos inputs e cadastrará usuário no banco de dados (METODO POST)
-})
+router.post("/register", async (req,res) => {
+    console.log(req.body);
 
-router.get('/login', (req,res) => {
-    // Essa rota exibirá a página de login (METODO GET)
-    res.send("TELA DE LOGIN EM CONSTRUÇÃO")
+    const { dia, mes, ano, nome, cpf, senha, senha2 } = req.body;
+
+    let errors = [];
+
+    const now = new Date();
+    const anoAtual = now.getFullYear();
+    if (Number(dia) > 31 || Number(dia) < 1 || Number(mes) < 1 || Number(mes) > 12 || Number(ano) > anoAtual) {
+        errors.push('Data inválida');
+    }
+
+    const cpfSemFormatacao = cpf.replace(/\D/g, '');
+    if (!/^\d{11}$/.test(cpfSemFormatacao)) {
+        errors.push('CPF inválido');
+    }
+
+    if (senha !== senha2) {
+        errors.push('As senhas não coincidem');
+    }
+
+    if(senha.length <= 4){
+        errors.push('Senha muito curta');
+    }
+
+    if (errors.length > 0) {
+        return res.status(400).json({ errors });
+    } 
+
+        
+    try {
+        const existingUser = await Usuario.findOne({ cpf });
+        if (existingUser) {
+            return res.status(400).send('CPF já registrado.');
+        }
+
+        let salt = bcrypt.genSaltSync(10);
+        let hash = bcrypt.hashSync(senha, salt);
+    
+        const newUser = new Usuario({
+            nome: nome,
+            senha: hash,
+            cpf: cpf,
+            dataNasc: `${dia}-${mes}-${ano}`
+        });
+    
+        await newUser.save();
+        res.status(201).send('Usuário registrado com sucesso');
+    } catch (err) {
+        console.error('Erro ao registrar usuário:', err);
+        res.status(500).send('Erro no servidor');
+    }
+    
 })
 
 router.post('/login', (req,res,next) => {
@@ -20,8 +67,8 @@ router.post('/login', (req,res,next) => {
     // Essa rota fará o reconhecimento do usuário
     passport.authenticate("local", {
         successRedirect: "/",
-        failureRedirect: "/usuario/login/",
-        failureFlash: true
+        failureRedirect: "/",
+        failureFlash: false
     })(req,res,next)
 })
 

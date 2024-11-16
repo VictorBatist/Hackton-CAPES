@@ -7,18 +7,16 @@ const Usuario = mongoose.model("usuarios");
 
 module.exports = function(passport) {
 
-    passport.use(new LocalStrategy({ usernameField: 'email', passwordField: "password" }, (email, password, done) => {
+    passport.use(new LocalStrategy({ usernameField: 'cpf', passwordField: "senha" }, (cpf, senha, done) => {
         // Busca o usuário pelo cpf
-        Usuario.findOne({ email: email }).then((usuario) => {
+        Usuario.findOne({ cpf: cpf }).then((usuario) => {
             console.log('Usuário encontrado:', usuario);
 
             if (!usuario) {
                 return done(null, false, { message: "Usuário não encontrado" });
             }
-            console.log(password)
-            console.log(usuario.senha)
             // Compara a senha fornecida com a senha criptografada armazenada no banco
-            bcrypt.compare(password, usuario.senha, (erro, res) => {
+            bcrypt.compare(senha, usuario.senha, (erro, res) => {
                 if (erro) {
                     console.error("Erro ao comparar as senhas:", erro);
                     return done(erro);
