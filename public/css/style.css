@@ -17,11 +17,15 @@ html, body {
     font-optical-sizing: auto;
     overflow-x: hidden;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
 }
 /*
 Usado para alinhar a página
@@ -240,6 +244,7 @@ section .formulario{
     font-size: 20px;
     color: var(--color-white);
     font-weight: 900;
+    cursor: pointer;
 }
 
 .data-inputs{
@@ -252,6 +257,7 @@ section .formulario{
     margin-right: 20px;
     background-color: var(--color-white);
     display: flex;
+    justify-content: center;
     padding: 10px;
     border: none;
     border-radius: 16px;
@@ -260,8 +266,20 @@ section .formulario{
     font-size: 20px;
     text-align: center;
     color: #333CA2;
-    font-weight: 900;
+    font-weight: 700;
     text-decoration: none;
+}
+
+.data-inputs input[type="number"] {
+    -moz-appearance: textfield; /* Remove a aparência padrão do número no Firefox */
+    appearance: textfield; 
+    text-align: center;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
 
 img {
@@ -275,7 +293,6 @@ img {
     color: #333CA2;
 }
 .form-inputs{
-    margin-top: 10px;
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -292,7 +309,7 @@ img {
     height: 63px;
     font-size: 20px;
     color: #333CA2;
-    font-weight: 900;
+    font-weight: 700;
 }
 .form-inputs input::placeholder{
     font-weight: 700;
@@ -324,4 +341,91 @@ li {
 a {
 	color: #fff;
 	text-decoration: none;
+}
+
+.suggestions-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--color-gray-white);
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .suggestions-list li {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    color: var(--color-gray);
+  }
+  
+  .suggestions-list li:hover {
+    border-radius: 10px;
+    background-color: #eaeaea;
+  }
+  .cont-suggestions{
+    position: relative;
+    width: 90%;
+  }
+
+#slider{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    height: 430px;
+    gap: 100px;
+}
+  
+.main-content {
+    flex-grow: 1;
+}
+
+.slider-content{
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.103);
+    font-family: 'Roboto';
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 310.95px;
+}
+
+.slider-content #title{
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    color: #212121;
+    font-weight: bold;
+}
+.slider-content #subtitle{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 9.5px;
+    color: #212121;
+}
+.slider-content #data{
+    margin-left: 5px;
+    margin-top: 5px;
+    font-size: 6.6px;
+    color: #212121;
+}
+
+.info{
+    width: 1540px;
+    margin-top: 150px;
+    margin-bottom: 20px;
+}
+.info #info-title{
+    color: #1E2142;
+    display: flex;
+    width: 350px;
+    font-size: 38px;
+    font-weight: 600;
+    border-bottom: 2px solid black;
+    margin-bottom: 20px;
 }

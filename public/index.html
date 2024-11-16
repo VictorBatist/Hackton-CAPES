@@ -7,8 +7,10 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link Fontes -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Lalezar&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&family=Lalezar&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Links Style CSS -->
      <link rel="stylesheet" href="./css/reset.css">
      <link rel="stylesheet" href="./css/style.css">
@@ -17,24 +19,29 @@
     <title>CAPES</title>
 </head>
 <body>
-    <main>
+
+<div class="main-content">
+
     <header>       
         <div class="rainbow"><img src="./assets/image/rainbow.png" id="rainbow"></div>
             <div class="menu">
                 <img src="./assets/image/background.png">
                 <div class="menu-items">
-                    <a href=""><img class="logo" src="./assets/image/logo-capes-periodicos.webp" alt="periodicos"></a>
+                    <a href=""><img class="logo" src="./assets/image/logo-capes-periodicos.png" alt="periodicos"></a>
                     <div class="menu-login">
-                        <a href="#">Criar Conta</a>
-                        <a href="/user/login">Login</a>
+                        <a href="#" id="createAccount">Criar Conta</a>
+                        <a href="/user/login" id="Login">Login</a>
                     </div> 
                 </div>
             </div>
     </header>
+
     <main>
+
         <section>
             <div class="input-pesquisa">
-                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?"> </button>
+                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?" id="searchInput"> </button>
+                <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
                 <p class="sugestions">Tente por: <span>Peter Jandi Junior</hspan><span>IFPB</span><span>Medicina</span></p>
             </div>
         </section>
@@ -56,15 +63,60 @@
                         </div>
                         <div class='form-inputs'>
                         <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="E-mail">
-                        <input type="text" placeholder="Senha">
+                        <input type="text" id="cpf" placeholder="CPF" maxlength="14">
+                        <input type="password" placeholder="Senha">
                         </div>
                         <button type="submit" id="confirm">Criar Conta</button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <div class="info">
+        <span id="info-title">Informativos</span>
+        <section id="slider">
+
+        <a href="#">
+            <div class="slider-content">
+                <img src="./assets/image/image1.png">
+                <span id="title">Análise Textual, Design e Questões de Gênero são temas de cursos</span>
+                <span id="subtitle">“Treinamento será nos dias 6, 14 e 18 de novembro...”</span>
+                <span id="data">05/11/2024</span>
+            </div>
+        </a>
+
+        <a href="#">
+            <div class="slider-content">
+                <img src="./assets/image/image2.png">
+                <span id="title">Premiação reconhece pesquisadoras de todo o Brasil</span>
+                <span id="subtitle">“As 15 cientistas selecionadas foram destaque nas áreas de...”</span>
+                <span id="data">29/10/2024</span>
+            </div>
+        </a>
+
+        <a href="#">
+            <div class="slider-content">
+                <img src="./assets/image/image3.png">
+                <span id="title">Pesquisas em Ciências de Alimentos são destaques em publicação</span>
+                <span id="subtitle">“Textos constam do Journal of Food Science e são resultados de...”</span>
+                <span id="data">14/11/2024</span>
+            </div>
+        </a>
+
+        <a href="#">
+            <div class="slider-content">
+                <img src="./assets/image/image4.png">
+                <span id="title">Treinamento discute publicação de artigo na Biochemical Society</span>
+                <span id="subtitle">“Evento promovido pela PortlandPress acontece quinta-feira às.”</span>
+                <span id="data">06/11/2024</span>
+            </div>
+        </a>
+            
+        </section>
+    </div>
     </main>
+
+</div>
 
     <div class="footer">
         <img src="./assets/image/Logo-Capes.webp" alt="Capes">
@@ -77,8 +129,12 @@
                 <li><a href="#">Contato</a></li>
             </ul>
         </nav>
+
     </div>
-    </main>
-    <div class="alinhamento"></div>
+
+    <div class="alinhamento"></div> <!--Serve apenas para ver a centralização dos itens no CSS-->
+
+    <script src="./js/script.js" defer></script>
+
 </body>
 </html>
