@@ -50,9 +50,9 @@
                     <div class="reg-form">
                         <h3 id="title">Data de Nascimento</h3>
                         <div class="data-inputs">
-                            <input type="number" placeholder="dd">
-                            <input type="number" placeholder="mm">
-                            <input type="number" placeholder="aa">
+                            <input type="number" placeholder="dd" max="31" oninput="this.value = this.value.slice(0, 2)">
+                            <input type="number" placeholder="mm" max="12" oninput="this.value = this.value.slice(0, 2)">
+                            <input type="number" placeholder="aa" max="2024" oninput="this.value = this.value.slice(0, 4)">
                         </div>
                         <div class='form-inputs'>
                         <input type="text" placeholder="Nome">
