@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 mongoose = require("mongoose");
 require("../models/User");
-const Usuario = mongoose.model("usuarios");
+const User = mongoose.model("usuarios");
 const bcrypt = require("bcryptjs")
 const passport = require("passport")
 
@@ -41,7 +41,7 @@ router.post("/register", async (req,res) => {
 
         
     try {
-        const existingUser = await Usuario.findOne({ cpf });
+        const existingUser = await User.findOne({ cpf });
         if (existingUser) {
             return res.status(400).send('CPF já registrado.');
         }
@@ -49,7 +49,7 @@ router.post("/register", async (req,res) => {
         let salt = bcrypt.genSaltSync(10);
         let hash = bcrypt.hashSync(senha, salt);
     
-        const newUser = new Usuario({
+        const newUser = new User({
             nome: nome,
             senha: hash,
             cpf: cpf,

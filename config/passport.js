@@ -8,6 +8,7 @@ const Usuario = mongoose.model("usuarios");
 module.exports = function(passport) {
 
     passport.use(new LocalStrategy({ usernameField: 'cpf', passwordField: "senha" }, (cpf, senha, done) => {
+        console.log(usernameField, passwordField)
         // Busca o usuário pelo cpf
         Usuario.findOne({ cpf: cpf }).then((usuario) => {
             console.log('Usuário encontrado:', usuario);

@@ -4,7 +4,7 @@ header{
 
 .menu-items{
     margin-top: 34px;
-    width: 1500px;
+    width: 1350px;
 }
 
 section button.btn-input2{
@@ -63,4 +63,48 @@ section .input-pesquisa p span{
 
 .sugestions{
     display: none;
+}
+
+#mostrarObras{
+    margin-top: 82px;
+    width: 1281px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+#mostrarObras #title{
+    margin-left: 43px;
+    margin-bottom: 12px;
+    color: #1E2144;
+    font-family: Montserrat;
+    font-size: 19.007px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.contain-text{
+    width: 1281px;
+    height: 150px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    background: #D9D9D9;
+}
+
+#Estatisticas{
+    margin-top: 182px;
+    display: flex;
+    justify-content: flex-start;
+    width: 1281px;
+    height: 851px;
+
+}
+
+.contain-est{
+    height: 100%;
+    width: 245px;
+    border-radius: 46px;
+    background: #333CA2;
 }
