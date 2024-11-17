@@ -21,7 +21,7 @@
 
         <section>
             <div class="input-pesquisa">
-                <button class="btn-input2"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="{{pesquisa}}" id="searchInput"> </button>
+                <button class="btn-input" id="btn-input2"><img src="./assets/image/Loupe.png"> <input type="text" value="{{query}}" id="searchInput"> </button>
                 <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
                 <p class="sugestions">Tente por: <span>Peter Jandi Junior</span><span>IFPB</span><span>Medicina</span></p>
             </div>
@@ -35,6 +35,40 @@
 
         <section id="Estatisticas">
             <div class="contain-est"></div>
+
+<div class="artigos">
+    <h1 id="res">Resultados de 1 - 30 para 11.807 {{total_results}} "{{query}}"</h1>
+
+    {{#if error}}
+    <p style="color: red;">{{error}}</p>
+    {{else if artigos.length}}
+    <ul>
+        {{#each artigos}}
+        <li>
+            {{#if this.doi}}
+            <a href="{{this.doi}}"><h2 class="title">{{this.title}}</h2></a>
+            {{else}}
+            <h2 class="title" id="noclick" >{{this.title}}</h2>
+            {{/if}}
+            <p id="subtitle"><strong>Autores:</strong> 
+                {{#each this.authorships}}
+                {{this.author.display_name}}{{#unless @last}}, {{/unless}}
+                {{/each}}
+            </p>
+            <p id="desc"><strong>Publicado em:</strong> {{this.publication_date}}</p>
+            <div class="buttons">
+                <a href="{{this.doi}}"><button><img src="./assets/image/Enter.png">Acessar</button></a>
+                <button><img src="./assets/image/Vector.png">Guardar artigo</button>
+                <button><img src="./assets/image/Clock.png">Ler mais tarde</button>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p id="res">Nenhum artigo encontrado para o termo "{{query}}".</p>
+    {{/if}}
+</div>
+
         </section>
     </div>
     </main>

@@ -10,6 +10,9 @@ const user = require('./routes/user')
 require('./config/passport')(passport);
 db();
 
+const fetch = require("node-fetch");
+const { retornaArtigos } = require("./public/js/requestApi");
+
 // Define a porta
 const PORT = process.env.PORT || 8081;
 
@@ -57,10 +60,39 @@ app.get('/', (req, res) => {
     res.render("index")
 });
 
-app.get('/search', (req, res) => {
-    const pesquisa = req.query.query;
+app.get('/search', async (req, res) => {
+    const query = req.query.query;
   
-    res.render("search/search", {pesquisa: pesquisa})
+    if (!query) {
+      return res.render("search/search", {
+        error: "Por favor, insira um termo de pesquisa.",
+        query
+      });
+    }
+  
+    try {
+      const response = await fetch(`https://api.openalex.org/works?search=${encodeURIComponent(query)}`);
+      const dados = await response.json();
+  
+      const artigos = (dados.results || []).map(artigo => ({
+        title: artigo.title || "Título indisponível",
+        authorships: artigo.authorships || [],
+        publication_date: artigo.publication_date || "Data não disponível",
+        doi: artigo.doi ? `https://doi.org/${artigo.doi}` : null
+      }));
+  
+      res.render("search/search", {
+        query,
+        artigos,
+        total_results: dados.meta ? dados.meta.count : 0
+      });
+    } catch (error) {
+      console.error("Erro na API OpenAlex:", error);
+      res.render("search/search", {
+        error: "Não foi possível buscar artigos. Tente novamente mais tarde.",
+        query
+      });
+    }
   });
 
 // Inicia o servidor

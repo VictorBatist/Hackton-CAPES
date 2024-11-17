@@ -149,25 +149,29 @@ const informativos = {
       "img": "./assets/image/image1.png",
       "title": "Análise Textual, Design e Questões de Gênero são temas de cursos",
       "subtitle": "“Treinamento será nos dias 6, 14 e 18 de novembro...”",
-      "date": "05/11/2024"
+      "date": "05/11/2024",
+      "url": "https://www.gov.br/capes/pt-br/assuntos/noticias/analise-textual-design-e-questoes-de-genero-sao-temas-de-cursos"
     },
     {
       "img": "./assets/image/image2.png",
       "title": "Premiação reconhece pesquisadoras de todo o Brasil",
       "subtitle": "“As 15 cientistas selecionadas foram destaque nas áreas de...”",
-      "date": "29/10/2024"
+      "date": "29/10/2024",
+      "url": "https://www.gov.br/capes/pt-br/assuntos/noticias/premiacao-reconhece-pesquisadoras-de-todo-o-brasil"
     },
     {
       "img": "./assets/image/image3.png",
       "title": "Pesquisas em Ciências de Alimentos são destaques em publicação",
       "subtitle": "“Textos constam do Journal of Food Science e são resultados de...”",
-      "date": "14/11/2024"
-    },
+      "date": "14/11/2024",
+      "url": "https://www.gov.br/capes/pt-br/assuntos/noticias/pesquisas-em-ciencias-de-alimentos-sao-destaques-em-publicacao#:~:text=Pesquisas%20em%20Ci%C3%AAncias%20de%20Alimentos%20s%C3%A3o%20destaques%20em%20publica%C3%A7%C3%A3o,-Textos%20constam%20do&text=Avan%C3%A7os%20na%20pesquisa%20em%20Ci%C3%AAncia,para%20promover%20a%20seguran%C3%A7a%20alimentar."
+    }, 
     {
       "img": "./assets/image/image4.png",
       "title": "Treinamento discute publicação de artigo na Biochemical Society",
       "subtitle": "“Evento promovido pela PortlandPress acontece quinta-feira às.”",
-      "date": "06/11/2024"
+      "date": "06/11/2024",
+      "url": "https://www.gov.br/capes/pt-br/assuntos/noticias/treinamento-discute-publicacao-de-artigo-na-biochemical-society"
     }
   ]
 };
@@ -178,7 +182,7 @@ function createInformativos(json) {
 
   json.informativos.forEach(info => {
     const link = document.createElement('a');
-    link.href = "#";
+    link.href = info.url;
 
     const sliderContent = document.createElement('div');
     sliderContent.classList.add('slider-content');
@@ -198,45 +202,38 @@ function createInformativos(json) {
     date.id = "data";
     date.textContent = info.date;
 
-    // Adiciona os elementos ao conteúdo
     sliderContent.appendChild(img);
     sliderContent.appendChild(title);
     sliderContent.appendChild(subtitle);
     sliderContent.appendChild(date);
 
-    // Adiciona o conteúdo ao link
     link.appendChild(sliderContent);
-
-    // Adiciona o link ao slider
     slider.appendChild(link);
   });
 }
 
-// Adiciona event listeners para todas as sugestões
+
 document.querySelectorAll('.sugestions span').forEach(span => {
   span.addEventListener('click', (event) => {
     const searchInput = document.getElementById('searchInput');
-    searchInput.value = event.target.textContent; // Substitui o valor do input com o texto do span clicado
+    searchInput.value = event.target.textContent;
   });
 });
 
-// Função para redirecionar com base no valor do input
 function handleSearch() {
   const searchInput = document.getElementById('searchInput');
-  const query = searchInput.value.trim(); // Remove espaços extras
+  const query = searchInput.value.trim();
 
   if (query) {
-    // Redireciona para a rota GET
     window.location.href = `/search?query=${encodeURIComponent(query)}`;
   }
 }
 
-// Detecta clique no botão ou na lupa
 let isMouseDown = false;
 
 document.querySelector('.btn-input').addEventListener('mousedown', (event) => {
   if (event.target.tagName === 'IMG' || event.target.tagName === 'BUTTON') {
-    isMouseDown = true; // Clique inicial detectado
+    isMouseDown = true;
   }
 });
 
