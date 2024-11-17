@@ -7,7 +7,6 @@ const bcrypt = require("bcryptjs")
 const passport = require("passport")
 
 router.post("/register", async (req,res) => {
-    console.log(req.body);
 
     const { dia, mes, ano, nome, cpf, senha, senha2 } = req.body;
 
@@ -17,6 +16,10 @@ router.post("/register", async (req,res) => {
     const anoAtual = now.getFullYear();
     if (Number(dia) > 31 || Number(dia) < 1 || Number(mes) < 1 || Number(mes) > 12 || Number(ano) > anoAtual) {
         errors.push('Data inválida');
+    }
+    
+    if(anoAtual - Number(ano) < 18){
+        errors.push('Usuário não possui idade suficiente');
     }
 
     const cpfSemFormatacao = cpf.replace(/\D/g, '');
@@ -64,6 +67,7 @@ router.post("/register", async (req,res) => {
 
 router.post('/login', (req,res,next) => {
 
+    console.log('entrou')
     // Essa rota fará o reconhecimento do usuário
     passport.authenticate("local", {
         successRedirect: "/",

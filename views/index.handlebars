@@ -1,0 +1,66 @@
+
+{{>_navbar}}
+
+<main>
+
+        <section>
+            <div class="input-pesquisa">
+                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?" id="searchInput"> </button>
+                <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
+                <p class="sugestions">Tente por: <span>Peter Jandi Junior</span><span>IFPB</span><span>Medicina</span></p>
+            </div>
+        </section>
+
+
+        <section id="cadastro">
+            <div class="section-cadastro">
+                <div class="content-text">
+                    <h1 id="title">CRIE SUA CONTA E TENHA UM <br> AMBIENTE PERSONALIZADO</h1>
+                    <p id="subtitle">Mais fácil de procurar o que você deseja!</p>
+                </div>
+                <div class="formulario" id="formulario">
+                    <div class="reg-form" id="cadastroForm">
+                        <h3 id="title">Data de Nascimento</h3>
+                        <form action="/user/register" method="post">
+
+                            <div class="data-inputs">
+                                <input type="number" placeholder="dd" max="31" oninput="this.value = this.value.slice(0, 2)" name="dia">
+                                <input type="number" placeholder="mm" max="12" oninput="this.value = this.value.slice(0, 2)" name="mes">
+                                <input type="number" placeholder="aa" max="2024" oninput="this.value = this.value.slice(0, 4)" name="ano">
+                            </div>
+                            <div class='form-inputs'>
+                                <input type="text" placeholder="Nome" name="nome">
+                                <input type="text" id="cpf" placeholder="CPF" maxlength="14" name="cpf">
+                                <input type="password" placeholder="Senha" name="senha">
+                                <input type="password" placeholder="Confirme a senha" name="senha2">
+                            </div>
+                            <button type="submit" id="confirm">Criar Conta</button>
+
+                        </form>
+                    </div>
+        
+                    <form action="/user/login" method="post">
+
+                        <div class="reg-form" id="loginForm" style="display: none;">
+                            <h3 id="title">Entrar</h3>
+                            <div class="form-inputs2">
+                                <input type="text" id="cpf" placeholder="CPF" maxlength="14">
+                                <input type="password" placeholder="Senha">
+                            </div>
+                            <button type="submit" id="confirm" class="enter-btn">Entrar</button>
+
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+            <div class="info">
+            <span id="info-title">Informativos</span>
+            <section id="slider"></section>
+            </div>
+
+    </div>
+</main>
+
+<script src="./js/script.js" defer></script>
