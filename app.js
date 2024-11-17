@@ -52,6 +52,7 @@ const PORT = process.env.PORT || 8081;
     })
     app.use('/user', user)
 // Rota principal
+
 app.get('/', (req, res) => {
     res.render("index")
 });
