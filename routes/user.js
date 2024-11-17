@@ -52,7 +52,7 @@ router.post("/register", async (req,res) => {
         const newUser = new User({
             nome: nome,
             senha: hash,
-            cpf: cpf,
+            cpf: cpfSemFormatacao,
             dataNasc: `${dia}-${mes}-${ano}`
         });
     
@@ -67,13 +67,13 @@ router.post("/register", async (req,res) => {
 
 router.post('/login', (req,res,next) => {
 
-    console.log('entrou')
     // Essa rota fará o reconhecimento do usuário
     passport.authenticate("local", {
-        successRedirect: "/",
+        successRedirect: "/entrou",
         failureRedirect: "/",
         failureFlash: false
     })(req,res,next)
+    console.log('alooo')
 })
 
 router.get("/logout", (req,res,next) => {

@@ -7,7 +7,7 @@ header{
     width: 1350px;
 }
 
-section button.btn-input2{
+section button#btn-input2{
     padding-left: 20px;
     cursor: pointer;
     background-color: var(--color-gray-white);
@@ -24,7 +24,7 @@ section button.btn-input2{
 
 
 
-button.btn-input2 input{
+button#btn-input2 input{
     font-family: 'Montserrat';
     color: #999999;
     border: none;
@@ -34,10 +34,10 @@ button.btn-input2 input{
     font-size: 20px;
     font-weight: 700;
     width: 100%;
-    height: 100%;
+    height: 20px;
 }
 
-.btn-input2 img{
+#btn-input2 img{
     margin: 0;
     scale: 0.8;
 }
@@ -94,17 +94,115 @@ section .input-pesquisa p span{
 }
 
 #Estatisticas{
-    margin-top: 182px;
     display: flex;
-    justify-content: flex-start;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 182px;
     width: 1281px;
-    height: 851px;
+    margin-bottom: 40px;
 
 }
 
 .contain-est{
-    height: 100%;
+    height: 851px;
     width: 245px;
     border-radius: 46px;
     background: #333CA2;
+}
+
+.artigos{
+    display: flex;
+    flex-direction: column;
+    left: 245px;
+    height: 100%;
+    width: 996px;
+    padding-left: 10px;
+    overflow: hidden;
+    border-left: 2px solid #333CA2;
+}
+
+.artigos .title{
+    cursor: pointer;
+    color: #1E2144;
+    font-family: 'Montserrat';
+    font-size: 19.007px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+}
+.artigos #noclick{
+    cursor: auto;
+    text-decoration: none;
+}
+.artigos .buttons{
+    justify-content: space-between;
+    display: flex;
+    width: 500px;
+    height: 30px;
+    margin: 20px 0px;
+}
+.artigos .buttons button{
+    margin-left: 10px;
+    cursor: pointer;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    transition: 0.2s;
+    color: #1E2144;
+    font-family: Montserrat;
+    font-size: 13.6px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: none;
+    border: none;
+}
+.artigos .buttons button:hover{
+    scale: 1.05;
+}
+.artigos #subtitle{
+    margin-top: 5px;
+    color: #999;
+    font-family: 'Montserrat';
+    font-size: 14.134px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+.artigos #desc{
+    margin-top: 5px;
+    color: #1E2144;
+    font-family: Montserrat;
+    font-size: 14.049px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.artigos li{
+    border-bottom: 2px solid #D9D9D9;
+    width: 100%;
+    margin: 10px 0px;
+
+}
+.artigos ul{
+    padding: 0;
+    margin: 0;
+}
+.artigos #res{
+    margin-bottom: 50px;
+    color: #1E2144;
+    font-family: Montserrat;
+    font-size: 19.007px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
 }
