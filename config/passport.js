@@ -1,7 +1,6 @@
 const LocalStrategy = require("passport-local").Strategy;
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-console.log('chegou aq')
 
 require("../models/User");
 const Usuario = mongoose.model("usuarios");
