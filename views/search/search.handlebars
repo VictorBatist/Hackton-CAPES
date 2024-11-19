@@ -4,28 +4,7 @@
 </head>
 
 
-<header>       
-        <div class="rainbow"><img src="./assets/image/rainbow.png" id="rainbow"></div>
-            <div class="menu">
-                <div class="menu-items">
-                    <a href="/"><img class="logo" src="./assets/image/logo-capes-periodicos.png" alt="periodicos"></a>
-                    <div class="menu-login">
-                        <a href="#" id="createAccount">Criar Conta</a>
-                        <a href="#" id="Login">Login</a>
-                    </div> 
-                </div>
-            </div>
-</header>
-
-    <main>
-
-        <section>
-            <div class="input-pesquisa">
-                <button class="btn-input" id="btn-input2"><img src="./assets/image/Loupe.png"> <input type="text" value="{{pesquisaUsuario}}" id="searchInput"> </button>
-                <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
-                <p class="sugestions">Tente por: <span>Peter Jandi Junior</span><span>IFPB</span><span>Medicina</span></p>
-            </div>
-        </section>
+{{>_navbarSearch}}
 
 
         <section id="mostrarObras">
@@ -37,7 +16,7 @@
             <div class="contain-est"></div>
 
 <div class="artigos">
-    <h1 id="res">Resultados de 1 - 30 para 11.807 {{total_results}} "{{pesquisaUsuario}}"</h1>
+    <h1 id="res">Resultados de 1 - {{totalResults}} para {{totalResults}} "{{pesquisaUsuario}}"</h1>
 
     {{#if error}}
     <p style="color: red;">{{error}}</p>
