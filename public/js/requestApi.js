@@ -1,5 +1,4 @@
-//Chamada da API da OpenAlex usando Input do usuário
-const fetch = require("node-fetch");
+// API OPEN ALEX
 
 async function retornaArtigos(inputUsuario) {
   try {
@@ -15,5 +14,3 @@ async function retornaArtigos(inputUsuario) {
 }
 
 module.exports = { retornaArtigos };
-
-

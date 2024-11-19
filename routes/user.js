@@ -73,7 +73,6 @@ router.post('/login', (req,res,next) => {
         failureRedirect: "/",
         failureFlash: false
     })(req,res,next)
-    console.log('alooo')
 })
 
 router.get("/logout", (req,res,next) => {

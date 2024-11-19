@@ -8,9 +8,9 @@ const session = require('express-session');
 const flash = require("connect-flash")
 const user = require('./routes/user')
 require('./config/passport')(passport);
+
 db();
 
-const fetch = require("node-fetch");
 const { retornaArtigos } = require("./public/js/requestApi");
 
 // Define a porta
@@ -61,28 +61,27 @@ app.get('/', (req, res) => {
 });
 
 app.get('/search', async (req, res) => {
-    const query = req.query.query;
+    const pesquisaUsuario = req.query.query;
   
-    if (!query) {
+    if (!pesquisaUsuario) {
       return res.render("search/search", {
         error: "Por favor, insira um termo de pesquisa.",
-        query
+        pesquisaUsuario
       });
     }
-  
+
     try {
-      const response = await fetch(`https://api.openalex.org/works?search=${encodeURIComponent(query)}`);
-      const dados = await response.json();
-  
-      const artigos = (dados.results || []).map(artigo => ({
+      const dados = await retornaArtigos(pesquisaUsuario);
+      
+      const artigos = (dados || []).map(artigo => ({
         title: artigo.title || "Título indisponível",
         authorships: artigo.authorships || [],
         publication_date: artigo.publication_date || "Data não disponível",
         doi: artigo.doi ? `https://doi.org/${artigo.doi}` : null
       }));
-  
+      
       res.render("search/search", {
-        query,
+        pesquisaUsuario,
         artigos,
         total_results: dados.meta ? dados.meta.count : 0
       });
@@ -90,12 +89,12 @@ app.get('/search', async (req, res) => {
       console.error("Erro na API OpenAlex:", error);
       res.render("search/search", {
         error: "Não foi possível buscar artigos. Tente novamente mais tarde.",
-        query
+        pesquisaUsuario
       });
     }
   });
 
 // Inicia o servidor
 app.listen(PORT, () => {
-    console.log(`🔹 O servidor está ONLINE! Porta: ${PORT} 🔹`);
+    console.log(`🟢 Bem vindo! O portal do CAPES está ONLINE!\nPorta de acesso: ${PORT}`);
 });
