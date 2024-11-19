@@ -11,12 +11,12 @@ require('./config/passport')(passport);
 
 db();
 
-const { retornaArtigos } = require("./public/js/requestApi");
+const { TratarDadosOpenAlex } = require("./public/js/tratarDadosOpenAlex");
 
 // Define a porta
 const PORT = process.env.PORT || 8081;
 
-// Configurações
+//#Configurações
     // Sessão
     app.use(session({
         secret: "sessao_segura",
@@ -33,6 +33,7 @@ const PORT = process.env.PORT || 8081;
         res.locals.error_msg = req.flash("error_msg")
         res.locals.error = req.flash("error")
         res.locals.user = req.user || null;
+        console.log(res.locals.user)
         next();
     })
 //Express
@@ -49,52 +50,47 @@ const PORT = process.env.PORT || 8081;
     app.set('view engine', 'handlebars');
 // Public
     app.use(express.static('public'));
-
     app.use((req,res,next)=>{
         next()
     })
     app.use('/user', user)
-// Rota principal
 
+// Rota principal
 app.get('/', (req, res) => {
     res.render("index")
 });
+//#Configurações
 
+// Rota de pesquisa de artigos
 app.get('/search', async (req, res) => {
-    const pesquisaUsuario = req.query.query;
+  const pesquisaUsuario = req.query.query;
   
-    if (!pesquisaUsuario) {
-      return res.render("search/search", {
-        error: "Por favor, insira um termo de pesquisa.",
-        pesquisaUsuario
+  if (!pesquisaUsuario) {
+    return res.render("search/search", {
+      error: "Por favor, insira um termo de pesquisa.",
+      pesquisaUsuario
+    });
+  }
+
+  const { artigos, totalResults, error } = await TratarDadosOpenAlex(pesquisaUsuario)
+  console.log(artigos)
+  console.log(totalResults)
+  res.render("search/search", {
+    pesquisaUsuario,
+      artigos,
+      totalResults: totalResults
+    })
+
+    if (error) {
+        return res.render("search/search", {
+          pesquisaUsuario,
+          error,
       });
     }
+  }
+);
 
-    try {
-      const dados = await retornaArtigos(pesquisaUsuario);
-      
-      const artigos = (dados || []).map(artigo => ({
-        title: artigo.title || "Título indisponível",
-        authorships: artigo.authorships || [],
-        publication_date: artigo.publication_date || "Data não disponível",
-        doi: artigo.doi ? `https://doi.org/${artigo.doi}` : null
-      }));
-      
-      res.render("search/search", {
-        pesquisaUsuario,
-        artigos,
-        total_results: dados.meta ? dados.meta.count : 0
-      });
-    } catch (error) {
-      console.error("Erro na API OpenAlex:", error);
-      res.render("search/search", {
-        error: "Não foi possível buscar artigos. Tente novamente mais tarde.",
-        pesquisaUsuario
-      });
-    }
-  });
 
-// Inicia o servidor
 app.listen(PORT, () => {
     console.log(`🟢 Bem vindo! O portal do CAPES está ONLINE!\nPorta de acesso: ${PORT}`);
 });

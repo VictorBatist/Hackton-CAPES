@@ -69,7 +69,7 @@ header .menu img{
 } 
 
 header .menu .logo{
-    animation: fadeIn 1s linear;
+    animation: fadeIn 0.2s linear;
     position: relative;
 }
 
@@ -483,4 +483,21 @@ a {
     100%{
         opacity: 1;
     }
+}
+
+.boasVindas h1{
+    font-family: "Montserrat";
+    font-weight: 700;
+    color: #001a30;
+    font-size: 18px;
+}
+
+.boasVindas{
+    display: flex;
+    align-items: center;
+}
+
+.boasVindas i{
+    scale: 3;
+    margin: 5px;
 }

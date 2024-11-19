@@ -1,14 +1,12 @@
 <header>       
         <div class="rainbow"><img src="./assets/image/rainbow.png" id="rainbow"></div>
             <div class="menu">
-                <img src="./assets/image/background.png">
                 <div class="menu-items">
                     <a href="/"><img class="logo" src="./assets/image/logo-capes-periodicos.png" alt="periodicos"></a>
                     <div class="menu-login">
-
                         {{#if user}}
 
-                        <div class="boasVindas"><h1>Olá, {{user.nome}} </h1>
+                        <div class="boasVindas" style="scale: 0.7;"><h1>Olá, {{user.nome}} </h1>
                             <a href="#" id="user">
                                 <i class='bx bxs-user-circle' style='color:#252222'  ></i>
                             </a>
@@ -28,3 +26,13 @@
                 </div>
             </div>
 </header>
+
+    <main>
+
+        <section>
+            <div class="input-pesquisa">
+                <button class="btn-input" id="btn-input2"><img src="./assets/image/Loupe.png"> <input type="text" value="{{pesquisaUsuario}}" id="searchInput" autocomplete="off"> </button>
+                <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
+                <p class="sugestions">Tente por: <span>Peter Jandi Junior</span><span>IFPB</span><span>Medicina</span></p>
+            </div>
+        </section>

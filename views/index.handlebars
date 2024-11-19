@@ -5,13 +5,16 @@
 
         <section>
             <div class="input-pesquisa">
-                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?" id="searchInput"> </button>
+                <button class="btn-input"><img src="./assets/image/Loupe.png"> <input type="text" placeholder="O que você procura?" id="searchInput" autocomplete="off"> </button>
                 <div class="cont-suggestions"><ul id="suggestions" class="suggestions-list"></ul></div>
                 <p class="sugestions">Tente por: <span>Peter Jandi Junior</span><span>IFPB</span><span>Medicina</span></p>
             </div>
         </section>
 
 
+        {{#if user}}
+        <h2 style="margin-top: 200px;">EM BREVE MAIS OPÇÕES PARA O USUÁRIO LOGADO!</h2>
+        {{else}}
         <section id="cadastro">
             <div class="section-cadastro">
                 <div class="content-text">
@@ -44,8 +47,8 @@
                         <div class="reg-form" id="loginForm" style="display: none;">
                             <h3 id="title">Entrar</h3>
                             <div class="form-inputs2">
-                                <input type="text" id="cpf" placeholder="CPF" maxlength="14">
-                                <input type="password" placeholder="Senha">
+                                <input type="text" id="cpf" placeholder="CPF" maxlength="14" name="cpf">
+                                <input type="password" placeholder="Senha" name="senha">
                             </div>
                             <button type="submit" id="confirm" class="enter-btn">Entrar</button>
 
@@ -54,6 +57,7 @@
                 </div>
             </div>
         </section>
+        {{/if}}
 
             <div class="info">
             <span id="info-title">Informativos</span>
