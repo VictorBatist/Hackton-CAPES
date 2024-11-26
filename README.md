@@ -49,4 +49,4 @@ node app.js
 localhost:8081
 ```
 
-> E é só aproveitar todas as funcionalidades no novo portal Periodicos Desenvolvido pela equipe MITBUSTERS
+> E é só aproveitar todas as funcionalidades no novo portal Periodicos Desenvolvido pela equipe MITBUSTERS.
