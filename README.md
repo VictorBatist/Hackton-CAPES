@@ -28,18 +28,18 @@
 git clone https://github.com/VictorBatist/Hackton-CAPES.git
  ```
 
-<p> - Após isso é necessario instalar o pacote npm</p>
+<p> - Após isso é necessario instalar o node modules</p>
 
 > Utilize o comando abaixo 
 
 ```
-npm install -g npm
+npm install
 ```
 
 <p> - Para executar o site é necessario usar o comando</p>
 
 ```
-node app.js
+npm start
 ```
 >após isso aparecerá a opção de acesso em seu browser pelo o localhost:8081
 
