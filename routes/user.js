@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-mongoose = require("mongoose");
+const mongoose = require("mongoose");
 require("../models/User");
 const User = mongoose.model("usuarios");
 const bcrypt = require("bcryptjs")
@@ -63,8 +63,6 @@ router.post("/register", async (req, res) => {
   
 
 router.post('/login', (req,res,next) => {
-    console.log(req.body.cpf)
-    console.log(req.body.senha)
     passport.authenticate("local", {
         successRedirect: "/",
         failureRedirect: "/",

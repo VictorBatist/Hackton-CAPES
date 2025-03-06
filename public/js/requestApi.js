@@ -1,5 +1,3 @@
-// API OPEN ALEX
-
 async function retornaArtigos(inputUsuario) {
   try {
     const response = await fetch(
@@ -8,8 +6,7 @@ async function retornaArtigos(inputUsuario) {
     const dados = await response.json();
     return dados.results || [];
   } catch (e) {
-    console.error("Erro na requisição:", e);
-    throw new Error("Erro ao buscar artigos.");
+    throw new Error("Erro ao buscar artigos.", e);
   }
 }
 
