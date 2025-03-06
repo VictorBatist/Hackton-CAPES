@@ -11,17 +11,14 @@ module.exports = function (passport) {
         new LocalStrategy(
             { usernameField: 'cpf', passwordField: 'senha' },
             (cpf, senha, done) => {
-                // Remove formatação do CPF
                 const cpfSemFormatacao = cpf.replace(/\D/g, '');
 
-                // Busca o usuário no banco pelo CPF
                 Usuario.findOne({ cpf: cpfSemFormatacao })
                     .then((usuario) => {
                         if (!usuario) {
                             return done(null, false, { message: "Usuário não encontrado" });
                         }
 
-                        // Compara a senha fornecida com a senha criptografada
                         bcrypt.compare(senha, usuario.senha, (erro, res) => {
                             if (erro) {
                                 console.error("Erro ao comparar senhas:", erro);
@@ -43,8 +40,6 @@ module.exports = function (passport) {
             }
         )
     );
-
-    // Serialização e desserialização do usuário
     passport.serializeUser((usuario, done) => {
         done(null, usuario._id);
     });

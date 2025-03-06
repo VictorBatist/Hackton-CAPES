@@ -119,7 +119,6 @@ document.addEventListener("click", (event) => {
             titulo.style.animation = '';
           }, 300);
         } else {
-          console.log(formularioInputs)
           cadastroForm.style.display = "block";
           formulario.style.marginTop = `165px`
           loginForm.style.display = "none";
@@ -183,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// JSON com as postagens
+
 const informativos = {
   "informativos": [
     {
@@ -217,7 +216,7 @@ const informativos = {
   ]
 };
 
-// Função para criar dinamicamente os elementos
+
 function createInformativos(json) {
   const slider = document.getElementById('slider');
 
@@ -280,12 +279,11 @@ document.querySelector('.btn-input').addEventListener('mousedown', (event) => {
 
 document.querySelector('.btn-input').addEventListener('mouseup', (event) => {
   if (isMouseDown && (event.target.tagName === 'IMG' || event.target.tagName === 'BUTTON')) {
-    handleSearch(); // Clique válido, executa a função
+    handleSearch();
   }
-  isMouseDown = false; // Reseta o estado
+  isMouseDown = false;
 });
 
-// Detecta "Enter" no campo de pesquisa
 document.getElementById('searchInput').addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     handleSearch();
