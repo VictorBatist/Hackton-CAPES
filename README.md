@@ -1,4 +1,4 @@
-<h1 align="center" > Periodicos CAPES 2024</h1>
+<h1 align="center" > Periodicos CAPES </h1>
 
 
 <h4>membros:</h4>
