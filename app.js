@@ -33,7 +33,6 @@ const PORT = process.env.PORT || 8081;
         res.locals.error_msg = req.flash("error_msg")
         res.locals.error = req.flash("error")
         res.locals.user = req.user || null;
-        console.log(res.locals.user)
         next();
     })
 //Express
@@ -73,8 +72,6 @@ app.get('/search', async (req, res) => {
   }
 
   const { artigos, totalResults, error } = await TratarDadosOpenAlex(pesquisaUsuario)
-  console.log(artigos)
-  console.log(totalResults)
   res.render("search/search", {
     pesquisaUsuario,
       artigos,
