@@ -48,7 +48,7 @@ const suggestions = [
   "Gestão do Tempo", "E-commerce", "Gestão de Riscos Empresariais", "Marketing Digital Estratégico", "Gestão de Supply Chain","Reabilitação Fisioterapêutica", "Fisioterapia Neurológica", "Exercícios Terapêuticos","Jogos Digitais", "Desenvolvimento de Jogos", "Jogos Educacionais", "Gamificação", "Design de Jogos", 
   "Inteligência Artificial em Jogos", "Psicologia dos Jogos", "Jogos de Realidade Virtual", "Jogos de Estratégia", 
   "E-sports", "Tecnologia em Jogos Interativos"
-];
+]
   
 const searchInput = document.getElementById("searchInput");
 const suggestionsList = document.getElementById("suggestions");
@@ -86,8 +86,6 @@ document.addEventListener("click", (event) => {
     suggestionsList.innerHTML = ""; 
   }
 });
-
-
 
   document.addEventListener("DOMContentLoaded", () => {
     createInformativos(informativos);
@@ -214,7 +212,7 @@ const informativos = {
       "url": "https://www.gov.br/capes/pt-br/assuntos/noticias/treinamento-discute-publicacao-de-artigo-na-biochemical-society"
     }
   ]
-};
+}
 
 
 function createInformativos(json) {
