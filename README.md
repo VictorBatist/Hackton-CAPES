@@ -1,5 +1,10 @@
 <h1 align="center" > Periodicos CAPES </h1>
 
+<h2 align='center'>Projeto destinado a cadeira de SO do terceiro periodo de Tecnologo em Analise e Desenvolvimento de Sistemas </h2>
+
+<h4>Professor:</h4>
+
+<p>João Igor Rocha</p>
 
 <h4>membros:</h4>
 <ul>
